@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="196dp"
+    android:height="196dp"
+    android:viewportWidth="196"
+    android:viewportHeight="196">
+    <item android:drawable="@drawable/btn_background_pressed" />
+    <item android:drawable="@drawable/btn_foreground_record" />
+</layer-list>

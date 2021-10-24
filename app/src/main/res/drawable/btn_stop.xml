@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="98dp"
+    android:height="98dp"
+    android:viewportWidth="196"
+    android:viewportHeight="196">
+    <item android:drawable="@drawable/btn_background" />
+    <item android:drawable="@drawable/btn_foreground_stop" />
+</layer-list>
