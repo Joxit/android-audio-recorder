@@ -7,6 +7,13 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="AURE_DEFAULT_TIME">00:00:00</string>
 
+    <string name="AURE_TITLE_SETTINGS">Settings</string>
+    <string name="AURE_SETTINGS_FILE_STORAGE">File storage</string>
+    <string name="AURE_DIALOG_TITLE_MICROPHONE_TEST">Microphone test</string>
+    <string name="AURE_SETTINGS_INFORMATION">About</string>
+    <string name="AURE_SETTINGS_DESCRIPTION_LEGAL">Open source licenses</string>
+    <string name="AURE_SETTINGS_TITLE_VERSION">Software version</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>

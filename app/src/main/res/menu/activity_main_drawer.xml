@@ -5,16 +5,22 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/settings_file_storage"
             android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:title="@string/AURE_SETTINGS_FILE_STORAGE" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/settings_microphone_test"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:title="@string/AURE_DIALOG_TITLE_MICROPHONE_TEST" />
+    </group>
+    <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/settings_description_legal"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/AURE_SETTINGS_DESCRIPTION_LEGAL" />
+        <item
+            android:id="@+id/settings_title_version"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/AURE_SETTINGS_TITLE_VERSION" />
     </group>
 </menu>

@@ -9,6 +9,6 @@
         android:id="@+id/nav_home"
         android:name="dev.joxit.androidapp.audiorecorder.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_recorder" />
 
 </navigation>
