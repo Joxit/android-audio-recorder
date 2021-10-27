@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/frag_recorder_view_flipper_height"
+    android:background="@android:color/transparent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/background"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/details_background_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" />
+
+    <ImageView
+        android:id="@+id/details_location_icon"
+        android:layout_width="@dimen/details_bar_location_icon_size"
+        android:layout_height="@dimen/details_bar_location_icon_size"
+        android:layout_alignTop="@id/background"
+        android:layout_marginStart="@dimen/details_bar_location_icon_margin_start"
+        android:layout_marginLeft="@dimen/details_bar_location_icon_margin_start"
+        android:layout_marginTop="@dimen/details_bar_location_icon_margin_top" />
+
+    <TextView
+        android:id="@+id/details_recording_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/details_location_icon"
+        android:layout_alignBottom="@id/details_location_icon"
+        android:layout_marginStart="@dimen/details_bar_rec_title_margin_start"
+        android:layout_marginLeft="@dimen/details_bar_rec_title_margin_start"
+        android:layout_toEndOf="@id/details_location_icon"
+        android:layout_toRightOf="@id/details_location_icon"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:textColor="@color/primary_text_light"
+        android:textSize="@dimen/details_bar_title_text_size" />
+
+    <ImageView
+        android:id="@+id/details_mode_icon"
+        android:layout_width="@dimen/details_bar_small_icon_size"
+        android:layout_height="@dimen/details_bar_small_icon_size"
+        android:layout_below="@id/details_location_icon"
+        android:layout_marginStart="@dimen/details_bar_small_icon_margin_start"
+        android:layout_marginLeft="@dimen/details_bar_small_icon_margin_start"
+        android:layout_marginTop="@dimen/details_bar_mode_icon_margin_top"
+        android:src="@drawable/icon_stereo" />
+
+    <TextView
+        android:id="@+id/details_mode_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_location_icon"
+        android:layout_alignTop="@id/details_mode_icon"
+        android:layout_alignBottom="@id/details_mode_icon"
+        android:layout_marginStart="@dimen/details_bar_secondary_text_margin_start"
+        android:layout_marginLeft="@dimen/details_bar_secondary_text_margin_start"
+        android:layout_toEndOf="@id/details_mode_icon"
+        android:layout_toRightOf="@id/details_mode_icon"
+        android:gravity="center_vertical"
+        android:textColor="@color/secondary_text_light"
+        android:textSize="@dimen/details_bar_secondary_text_size" />
+
+    <ImageView
+        android:id="@+id/details_quality_icon"
+        android:layout_width="@dimen/details_bar_small_icon_size"
+        android:layout_height="@dimen/details_bar_small_icon_size"
+        android:layout_below="@id/details_mode_icon"
+        android:layout_marginStart="@dimen/details_bar_small_icon_margin_start"
+        android:layout_marginLeft="@dimen/details_bar_small_icon_margin_start"
+        android:layout_marginTop="@dimen/details_bar_quality_icon_margin_top" />
+
+    <TextView
+        android:id="@+id/details_quality_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_mode_icon"
+        android:layout_alignTop="@id/details_quality_icon"
+        android:layout_marginStart="@dimen/details_bar_secondary_text_margin_start"
+        android:layout_marginLeft="@dimen/details_bar_secondary_text_margin_start"
+        android:layout_toEndOf="@id/details_quality_icon"
+        android:layout_toRightOf="@id/details_quality_icon"
+        android:gravity="center_vertical"
+        android:textColor="@color/secondary_text_light"
+        android:textSize="@dimen/details_bar_secondary_text_size" />
+</RelativeLayout>

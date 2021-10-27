@@ -16,8 +16,26 @@
     <dimen name="frag_recorder_volume_left_margin_bottom">8.0dip</dimen>
     <dimen name="recording_time_margin_bottom">0.0dip</dimen>
 
-
-
+    <dimen name="custom_match_parent">-1.0px</dimen>
+    <dimen name="details_bar_location_icon_size">34.0dip</dimen>
+    <dimen name="details_bar_location_icon_margin_start">12.0dip</dimen>
+    <dimen name="details_bar_location_icon_margin_top">10.0dip</dimen>
+    <dimen name="details_bar_rec_title_margin_start">14.0dip</dimen>
+    <dimen name="details_bar_title_text_size">16.0dip</dimen>
+    <dimen name="details_bar_small_icon_size">20.0dip</dimen>
+    <dimen name="details_bar_small_icon_margin_start">54.0dip</dimen>
+    <dimen name="details_bar_mode_icon_margin_top">6.0dip</dimen>
+    <dimen name="details_bar_secondary_text_margin_start">10.0dip</dimen>
+    <dimen name="details_bar_secondary_text_size">13.0dip</dimen>
+    <dimen name="details_bar_quality_icon_margin_top">12.0dip</dimen>
+    <item name="details_background_height" type="dimen">@dimen/custom_match_parent</item>
+    <dimen name="frag_recorder_card_padding">10.0dip</dimen>
+    <dimen name="frag_recorder_card_padding_top_bottom">10.0dip</dimen>
+    <dimen name="audio_settings_image_size">32.0dip</dimen>
+    <dimen name="frag_recorder_card_icon_margin_left">5.0dip</dimen>
+    <dimen name="frag_record_card_texts_margin_left">10.0dip</dimen>
+    <dimen name="frag_record_card_primary_text_size">14.0sp</dimen>
+    <dimen name="frag_record_card_secondary_text_size">12.0sp</dimen>
 
 
 </resources>

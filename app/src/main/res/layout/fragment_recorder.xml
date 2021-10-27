@@ -65,5 +65,26 @@
                 android:background="@android:color/transparent"
                 android:src="@drawable/btn_stop_selector" />
         </LinearLayout>
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/frag_recorder_view_flipper_height"
+            android:layout_below="@id/command_bar"
+            android:layout_alignParentBottom="true">
+
+            <!-- TODO create CustomViewFlipper -->
+            <ViewFlipper
+                android:layout_gravity="bottom"
+                android:id="@+id/view_flipper"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/frag_recorder_view_flipper_height">
+
+                <include layout="@layout/snackbar_mode_quality_buttons" />
+
+                <include layout="@layout/recorder_details_bottom_bar" />
+
+<!--                <include layout="@layout/snackbar_finished_recording" />-->
+            </ViewFlipper>
+        </FrameLayout>
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

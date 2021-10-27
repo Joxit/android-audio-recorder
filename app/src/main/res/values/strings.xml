@@ -13,6 +13,8 @@
     <string name="AURE_SETTINGS_INFORMATION">About</string>
     <string name="AURE_SETTINGS_DESCRIPTION_LEGAL">Open source licenses</string>
     <string name="AURE_SETTINGS_TITLE_VERSION">Software version</string>
+    <string name="AURE_DETAILS_QUALITY">Quality</string>
+    <string name="AURE_DETAILS_MODE">Mode</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
