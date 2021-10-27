@@ -3,24 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group>
         <item
             android:id="@+id/settings_file_storage"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_folder_open"
             android:title="@string/AURE_SETTINGS_FILE_STORAGE" />
         <item
             android:id="@+id/settings_microphone_test"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_keyboard_voice"
             android:title="@string/AURE_DIALOG_TITLE_MICROPHONE_TEST" />
     </group>
-    <group android:checkableBehavior="single">
+    <group>
         <item
             android:id="@+id/settings_description_legal"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_info_outline"
             android:title="@string/AURE_SETTINGS_DESCRIPTION_LEGAL" />
         <item
             android:id="@+id/settings_title_version"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_format_list_numbered"
             android:title="@string/AURE_SETTINGS_TITLE_VERSION" />
     </group>
 </menu>
