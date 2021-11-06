@@ -13,5 +13,8 @@
     <color name="primary">#EB463A</color>
     <color name="primary_text_light">#ff424242</color>
     <color name="secondary_text_light">#ffa2a2a2</color>
+    <color name="tab_text_color_selected">#ffffffff</color>
+    <color name="tab_text_color_unselected">#fff8bfbf</color>
+    <color name="actionbar_color">#ffec4132</color>
 
 </resources>
