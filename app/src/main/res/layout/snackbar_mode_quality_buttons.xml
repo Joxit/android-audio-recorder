@@ -5,7 +5,8 @@
     android:layout_alignParentBottom="true"
     android:baselineAligned="false"
     android:orientation="horizontal"
-    android:weightSum="2.0">
+    android:weightSum="2.0"
+    android:theme="@style/Theme.AppTheme">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0.0dip"
