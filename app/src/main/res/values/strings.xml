@@ -16,6 +16,15 @@
     <string name="AURE_DETAILS_QUALITY">Quality</string>
     <string name="AURE_DETAILS_MODE">Mode</string>
 
+    <!-- AudioModeEntity -->
+    <string name="AURE_DETAILS_BAR_MODE_STEREO">Stereo mode</string>
+    <string name="AURE_TITLE_CARD_MODE_STEREO">Stereo</string>
+    <string name="AURE_DESCRIPTION_CARD_MODE_STEREO">Two audio channels</string>
+    <string name="AURE_DETAILS_BAR_MODE_MONO">Mono mode</string>
+    <string name="AURE_TITLE_CARD_MODE_MONO">Mono</string>
+    <string name="AURE_DESCRIPTION_CARD_MODE_MONO">Single audio channel</string>
+
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
