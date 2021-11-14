@@ -1,5 +1,6 @@
 package dev.joxit.androidapp.audiorecorder.activity
 
+import android.media.Image
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -33,10 +34,17 @@ class MainActivity : AppCompatActivity() {
   private fun configureViewModel() {
     val modeIcon: ImageView = findViewById(R.id.mode_icon)
     val modeDescription: TextView = findViewById(R.id.mode_description)
+    val qualityIcon: ImageView = findViewById(R.id.quality_icon)
+    val qualityDescription: TextView = findViewById(R.id.quality_description)
 
     viewModel.audioMode.observe(this) {
       modeIcon.setImageResource(it.iconId)
       modeDescription.setText(it.shortTitleId)
+    }
+
+    viewModel.audioFormat.observe(this) {
+      qualityIcon.setImageResource(it.iconId)
+      qualityDescription.setText(it.shortTitleId)
     }
 
   }
