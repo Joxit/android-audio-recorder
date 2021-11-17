@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -12,11 +11,62 @@
         android:layout_height="fill_parent"
         android:background="@color/gray_light">
 
+        <ImageView
+            android:id="@+id/microphone_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/frag_recorder_microphone_image_margin"
+            android:layout_marginTop="@dimen/frag_recorder_microphone_image_margin_top"
+            android:layout_marginRight="@dimen/frag_recorder_microphone_image_margin_right"
+            android:src="@drawable/icon_mic_selector" />
+
+        <ImageView
+            android:id="@+id/volume_meter_mono"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/microphone_image"
+            android:layout_marginEnd="@dimen/frag_recorder_meter_image_margin_right"
+            android:layout_marginRight="@dimen/frag_recorder_meter_image_margin_right"
+            android:layout_toEndOf="@id/microphone_image"
+            android:layout_toRightOf="@id/microphone_image"
+            android:scaleType="fitXY"
+            android:src="@drawable/bg_mono"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:id="@+id/volume_meter_stereo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/microphone_image"
+            android:layout_toEndOf="@id/microphone_image"
+            android:layout_toRightOf="@id/microphone_image"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/volume_meter_left"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/frag_recorder_meter_image_margin_right"
+                android:layout_marginRight="@dimen/frag_recorder_meter_image_margin_right"
+                android:layout_marginBottom="@dimen/frag_recorder_volume_left_margin_bottom"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_stereo" />
+
+            <ImageView
+                android:id="@+id/volume_meter_right"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/frag_recorder_meter_image_margin_right"
+                android:layout_marginRight="@dimen/frag_recorder_meter_image_margin_right"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_stereo" />
+        </LinearLayout>
 
         <TextView
             android:id="@+id/recording_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/volume_meter_stereo"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/frag_recorder_recording_time_margin_top"
@@ -63,11 +113,12 @@
                 android:id="@+id/stop_button"
                 android:layout_width="92dp"
                 android:layout_height="92dp"
-                android:scaleType="fitCenter"
                 android:layout_gravity="bottom"
                 android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
                 android:src="@drawable/btn_stop_selector" />
         </LinearLayout>
+
         <FrameLayout
             android:layout_width="fill_parent"
             android:layout_height="@dimen/frag_recorder_view_flipper_height"
@@ -76,16 +127,16 @@
 
             <!-- TODO create CustomViewFlipper -->
             <ViewFlipper
-                android:layout_gravity="bottom"
                 android:id="@+id/view_flipper"
                 android:layout_width="fill_parent"
-                android:layout_height="@dimen/frag_recorder_view_flipper_height">
+                android:layout_height="@dimen/frag_recorder_view_flipper_height"
+                android:layout_gravity="bottom">
 
                 <include layout="@layout/snackbar_mode_quality_buttons" />
 
                 <include layout="@layout/recorder_details_bottom_bar" />
 
-<!--                <include layout="@layout/snackbar_finished_recording" />-->
+                <!--                <include layout="@layout/snackbar_finished_recording" />-->
             </ViewFlipper>
         </FrameLayout>
 

@@ -17,5 +17,7 @@
     <color name="tab_text_color_selected">#ffffffff</color>
     <color name="tab_text_color_unselected">#fff8bfbf</color>
     <color name="actionbar_color">#ffec4132</color>
+    <color name="black_light">#ff474747</color>
+    <color name="light_grey">#ffcccccc</color>
 
 </resources>
