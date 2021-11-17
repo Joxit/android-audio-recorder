@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/recordings_selected_name_color" android:state_activated="true" />
+    <item android:state_pressed="true" android:color="@color/recordings_selected_name_color" />
+    <item android:color="@color/recording_title_color" />
+</selector>

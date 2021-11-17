@@ -1,13 +1,13 @@
 package dev.joxit.androidapp.audiorecorder.activity
 
-import android.media.Image
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
 import dev.joxit.androidapp.audiorecorder.R
+import dev.joxit.androidapp.audiorecorder.activity.dialog.mode.ModeDialog
 import dev.joxit.androidapp.audiorecorder.databinding.AppBarMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     mDrawer = RecorderDrawer(this)
 
     configureViewModel()
+    configureModeQualityDialog()
   }
 
   private fun configureViewModel() {
@@ -46,6 +47,14 @@ class MainActivity : AppCompatActivity() {
       qualityIcon.setImageResource(it.iconId)
       qualityDescription.setText(it.shortTitleId)
     }
+  }
 
+  private fun configureModeQualityDialog() {
+    val modeLayout: RelativeLayout = findViewById(R.id.mode_layout)
+    val qualityLayout: RelativeLayout = findViewById(R.id.quality_layout)
+
+    modeLayout.setOnClickListener {
+      ModeDialog().show(this.supportFragmentManager, ModeDialog::class.java.canonicalName)
+    }
   }
 }

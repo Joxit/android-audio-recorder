@@ -19,5 +19,7 @@
     <color name="actionbar_color">#ffec4132</color>
     <color name="black_light">#ff474747</color>
     <color name="light_grey">#ffcccccc</color>
+    <color name="recordings_selected_name_color">#ffcc342f</color>
+    <color name="gray_secondary">#ff777777</color>
 
 </resources>

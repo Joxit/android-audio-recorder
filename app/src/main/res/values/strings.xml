@@ -38,6 +38,11 @@
     <string name="AURE_AAC64_QUALITY_SUBTITLE_MEDIUM">File size: 500 kB/minute</string>
     <string name="AURE_AAC32_QUALITY_SUBTITLE_BASIC">File size: 250 kB/minute</string>
 
+    <!-- Mode Dialog -->
+    <string name="AURE_SETTINGS_TITLE_AUDIO_MODE">Mode</string>
+
+
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
