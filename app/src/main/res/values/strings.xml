@@ -40,6 +40,7 @@
 
     <!-- Mode Dialog -->
     <string name="AURE_SETTINGS_TITLE_AUDIO_MODE">Mode</string>
+    <string name="AURE_SETTINGS_TITLE_AUDIO_QUALITY">Quality</string>
 
 
 
