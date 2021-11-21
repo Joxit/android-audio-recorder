@@ -18,12 +18,13 @@ object DialogFactory {
 
   fun createListItemView(
     layoutInflater: LayoutInflater,
+    view: View?,
     icon: Int,
     title: Int,
     description: Int
   ): View {
-    val relativeLayout: RelativeLayout =
-      layoutInflater.inflate(R.layout.dialog_mode_quality_item, null) as RelativeLayout
+    val relativeLayout: View =
+      view ?: layoutInflater.inflate(R.layout.dialog_mode_quality_item, null) as RelativeLayout
     relativeLayout.findViewById<ImageView>(R.id.icon).setImageResource(icon)
     relativeLayout.findViewById<TextView>(R.id.title).setText(title)
     relativeLayout.findViewById<TextView>(R.id.description).setText(description)

@@ -3,11 +3,11 @@ package dev.joxit.androidapp.audiorecorder.entity
 import dev.joxit.androidapp.audiorecorder.R
 
 enum class AudioFormatEntity(
-  val iconId: Int,
-  val shortTitleId: Int,
-  val titleId: Int,
-  val descriptionId: Int
-) {
+  override val iconId: Int,
+  override val shortTitleId: Int,
+  override val titleId: Int,
+  override val descriptionId: Int
+) : IconTitleDescription {
   WAV(
     R.drawable.icon_superior,
     R.string.AURE_WAV_QUALITY_TITLE_SUPERIOR,

@@ -7,8 +7,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dev.joxit.androidapp.audiorecorder.R
-import dev.joxit.androidapp.audiorecorder.activity.dialog.mode.ModeDialog
-import dev.joxit.androidapp.audiorecorder.activity.dialog.quality.QualityDialog
+import dev.joxit.androidapp.audiorecorder.activity.dialog.ModeQualityDialog
 import dev.joxit.androidapp.audiorecorder.databinding.AppBarMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -55,11 +54,13 @@ class MainActivity : AppCompatActivity() {
     val qualityLayout: RelativeLayout = findViewById(R.id.quality_layout)
 
     modeLayout.setOnClickListener {
-      ModeDialog().show(this.supportFragmentManager, ModeDialog::class.java.canonicalName)
+      ModeQualityDialog.Mode()
+        .show(this.supportFragmentManager, ModeQualityDialog.Mode::class.java.canonicalName)
     }
 
     qualityLayout.setOnClickListener {
-      QualityDialog().show(this.supportFragmentManager, QualityDialog::class.java.canonicalName)
+      ModeQualityDialog.Quality()
+        .show(this.supportFragmentManager, ModeQualityDialog.Quality::class.java.canonicalName)
     }
 
   }
