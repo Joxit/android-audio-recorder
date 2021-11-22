@@ -23,12 +23,16 @@ abstract class ModeQualityDialog(private val title: Int) : DialogFragment() {
       .create()
   }
 
-  protected abstract fun getAdapter(activity: Activity, listView: ListView): ModeQualityAdapter;
+  protected abstract fun getAdapter(
+    activity: Activity,
+    listView: ListView,
+    dialog: ModeQualityDialog
+  ): ModeQualityAdapter;
 
   private fun buildView(): View {
     val view = requireActivity().layoutInflater.inflate(R.layout.dialog_mode_quality_list, null)
     val list: ListView = view.findViewById(R.id.list)
-    val adapter = getAdapter(requireActivity(), list)
+    val adapter = getAdapter(requireActivity(), list, this)
     list.choiceMode = 1
     list.adapter = adapter
     list.onItemClickListener = adapter
@@ -37,12 +41,12 @@ abstract class ModeQualityDialog(private val title: Int) : DialogFragment() {
   }
 
   class Mode : ModeQualityDialog(R.string.AURE_SETTINGS_TITLE_AUDIO_MODE) {
-    override fun getAdapter(activity: Activity, listView: ListView) =
-      ModeQualityAdapter.Mode(requireActivity(), listView)
+    override fun getAdapter(activity: Activity, listView: ListView, dialog: ModeQualityDialog) =
+      ModeQualityAdapter.Mode(requireActivity(), listView, dialog)
   }
 
   class Quality : ModeQualityDialog(R.string.AURE_SETTINGS_TITLE_AUDIO_QUALITY) {
-    override fun getAdapter(activity: Activity, listView: ListView) =
-      ModeQualityAdapter.Quality(requireActivity(), listView)
+    override fun getAdapter(activity: Activity, listView: ListView, dialog: ModeQualityDialog) =
+      ModeQualityAdapter.Quality(requireActivity(), listView, dialog)
   }
 }

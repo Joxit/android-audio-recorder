@@ -14,6 +14,7 @@ import dev.joxit.androidapp.audiorecorder.entity.IconTitleDescription
 abstract class ModeQualityAdapter(
   private val mContext: Activity,
   private val mListView: ListView,
+  private val dialog: ModeQualityDialog,
 ) : BaseAdapter(), AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
   private val mSelectedPosition: Int by lazy {
@@ -29,6 +30,7 @@ abstract class ModeQualityAdapter(
       .edit()
       .putInt(getPreferencesKey(), mode)
       .apply()
+    dialog.dismiss()
   }
 
   override fun getCount() = getItems().size
@@ -72,7 +74,8 @@ abstract class ModeQualityAdapter(
   class Mode(
     mContext: Activity,
     mListView: ListView,
-  ) : ModeQualityAdapter(mContext, mListView) {
+    dialog: ModeQualityDialog,
+  ) : ModeQualityAdapter(mContext, mListView, dialog) {
 
     override fun getPreferencesKey(): String = PREFERENCE
 
@@ -87,7 +90,8 @@ abstract class ModeQualityAdapter(
   class Quality(
     mContext: Activity,
     mListView: ListView,
-  ) : ModeQualityAdapter(mContext, mListView) {
+    dialog: ModeQualityDialog,
+  ) : ModeQualityAdapter(mContext, mListView, dialog) {
 
     override fun getPreferencesKey(): String = PREFERENCE
 
@@ -97,7 +101,6 @@ abstract class ModeQualityAdapter(
       private val ITEMS = AudioFormatEntity.values()
       const val PREFERENCE = "QUALITY_PREFERENCES"
     }
-
   }
 
 }
