@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.BaseAdapter
 import android.widget.ListView
+import dev.joxit.androidapp.audiorecorder.activity.MainActivity
 import dev.joxit.androidapp.audiorecorder.entity.AudioFormatEntity
 import dev.joxit.androidapp.audiorecorder.entity.AudioModeEntity
 import dev.joxit.androidapp.audiorecorder.entity.IconTitleDescription
@@ -31,6 +32,9 @@ abstract class ModeQualityAdapter(
       .putInt(getPreferencesKey(), mode)
       .apply()
     dialog.dismiss()
+    if (mContext is MainActivity) {
+      mContext.updateAudioModeAndFormat()
+    }
   }
 
   override fun getCount() = getItems().size
@@ -82,7 +86,7 @@ abstract class ModeQualityAdapter(
     override fun getItems(): Array<out IconTitleDescription> = ITEMS
 
     companion object {
-      private val ITEMS = AudioModeEntity.values()
+      val ITEMS = AudioModeEntity.values()
       const val PREFERENCE = "MODE_PREFERENCES"
     }
   }
@@ -98,7 +102,7 @@ abstract class ModeQualityAdapter(
     override fun getItems(): Array<out IconTitleDescription> = ITEMS
 
     companion object {
-      private val ITEMS = AudioFormatEntity.values()
+      val ITEMS = AudioFormatEntity.values()
       const val PREFERENCE = "QUALITY_PREFERENCES"
     }
   }

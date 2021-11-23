@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import dev.joxit.androidapp.audiorecorder.R
+import dev.joxit.androidapp.audiorecorder.activity.dialog.ModeQualityAdapter
 import dev.joxit.androidapp.audiorecorder.activity.dialog.ModeQualityDialog
 import dev.joxit.androidapp.audiorecorder.databinding.AppBarMainBinding
 
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     configureViewModel()
     configureModeQualityDialog()
+    updateAudioModeAndFormat()
   }
 
   private fun configureViewModel() {
@@ -62,6 +64,14 @@ class MainActivity : AppCompatActivity() {
       ModeQualityDialog.Quality()
         .show(this.supportFragmentManager, ModeQualityDialog.Quality::class.java.canonicalName)
     }
+  }
 
+  fun updateAudioModeAndFormat() {
+    val qualityPreference =
+      getPreferences(MODE_PRIVATE).getInt(ModeQualityAdapter.Quality.PREFERENCE, 0)
+    viewModel.audioFormat.value = ModeQualityAdapter.Quality.ITEMS[qualityPreference]
+
+    val modePreference = getPreferences(MODE_PRIVATE).getInt(ModeQualityAdapter.Mode.PREFERENCE, 0)
+    viewModel.audioMode.value = ModeQualityAdapter.Mode.ITEMS[modePreference]
   }
 }
