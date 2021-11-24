@@ -49,7 +49,7 @@ abstract class ModeQualityAdapter(
       mContext.layoutInflater,
       view,
       item.iconId,
-      item.titleId,
+      item.shortTitleId,
       item.descriptionId
     )
 
