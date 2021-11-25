@@ -1,6 +1,7 @@
 package dev.joxit.androidapp.audiorecorder.activity
 
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -10,6 +11,7 @@ import dev.joxit.androidapp.audiorecorder.R
 import dev.joxit.androidapp.audiorecorder.activity.dialog.ModeQualityAdapter
 import dev.joxit.androidapp.audiorecorder.activity.dialog.ModeQualityDialog
 import dev.joxit.androidapp.audiorecorder.databinding.AppBarMainBinding
+import dev.joxit.androidapp.audiorecorder.entity.AudioModeEntity
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,10 +41,18 @@ class MainActivity : AppCompatActivity() {
     val modeDescription: TextView = findViewById(R.id.mode_description)
     val qualityIcon: ImageView = findViewById(R.id.quality_icon)
     val qualityDescription: TextView = findViewById(R.id.quality_description)
+    val volumeMeterMono: ImageView = findViewById(R.id.volume_meter_mono)
+    val volumeMeterStereoLeft: ImageView = findViewById(R.id.volume_meter_left)
+    val volumeMeterStereoRight: ImageView = findViewById(R.id.volume_meter_right)
 
     viewModel.audioMode.observe(this) {
       modeIcon.setImageResource(it.iconId)
       modeDescription.setText(it.shortTitleId)
+      val monoVisibility = if (it == AudioModeEntity.MONO) View.VISIBLE else View.INVISIBLE
+      val stereoVisibility = if (it == AudioModeEntity.STEREO) View.VISIBLE else View.INVISIBLE
+      volumeMeterMono.visibility = monoVisibility
+      volumeMeterStereoLeft.visibility = stereoVisibility
+      volumeMeterStereoRight.visibility = stereoVisibility
     }
 
     viewModel.audioFormat.observe(this) {
