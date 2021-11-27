@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
   private val viewModel: RecorderViewModel by viewModels {
     RecorderViewModel.RecorderViewModelFactory(application)
   }
+  private lateinit var viewHolder: ViewHolder
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
 
     mDrawer = RecorderDrawer(this)
 
+    viewHolder = ViewHolder.create(this)
     configureViewModel()
     configureModeQualityDialog()
     updateAudioModeAndFormat()
@@ -58,6 +60,10 @@ class MainActivity : AppCompatActivity() {
     viewModel.audioFormat.observe(this) {
       qualityIcon.setImageResource(it.iconId)
       qualityDescription.setText(it.shortTitleId)
+    }
+
+    viewModel.recorderState.observe(this) {
+      it.updateUI(viewHolder)
     }
   }
 
