@@ -1,19 +1,20 @@
 package dev.joxit.androidapp.audiorecorder.activity
 
-import android.app.Activity
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.internal.view.SupportMenu
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.SectionDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem
-import dev.joxit.androidapp.audiorecorder.AuReApp
 import dev.joxit.androidapp.audiorecorder.BuildConfig
 import dev.joxit.androidapp.audiorecorder.R
+import dev.joxit.androidapp.audiorecorder.activity.dialog.mictest.MicTestDialogFragment
 
-class RecorderDrawer(activity: Activity) {
+class RecorderDrawer(activity: AppCompatActivity) {
   private val drawer: Drawer
 
   companion object {
@@ -39,7 +40,7 @@ class RecorderDrawer(activity: Activity) {
       .withIdentifier(FILE_STORAGE)
       .withName(R.string.AURE_SETTINGS_FILE_STORAGE)
       .withIcon(R.drawable.ic_folder_open)
-     .withDescription(getFileStorageLocation(null))
+      .withDescription(getFileStorageLocation(null))
 
     val microphoneDrawerItem = PrimaryDrawerItem()
       .withSelectable(false)
@@ -73,7 +74,7 @@ class RecorderDrawer(activity: Activity) {
         versionDrawerItem
       )
       .withOnDrawerItemClickListener(this::drawerItemListener)
-      .withOnDrawerListener(DrawerListener())
+      .withOnDrawerListener(DrawerListener(activity.supportFragmentManager))
       .build()
   }
 
@@ -89,7 +90,7 @@ class RecorderDrawer(activity: Activity) {
 
   private fun getFileStorageLocation(a: Any?): String? = null
 
-  private class DrawerListener : Drawer.OnDrawerListener {
+  private class DrawerListener(val fragmentManager: FragmentManager) : Drawer.OnDrawerListener {
     override fun onDrawerOpened(drawerView: View?) {
     }
 
@@ -100,7 +101,11 @@ class RecorderDrawer(activity: Activity) {
       when (identifier) {
         FILE_STORAGE -> { //FileStorageDialog.show(this@MainActivity.supportFragmentManager)
         }
-        MICROPHONE_TEST -> { // MicTestDialogFragment.show(this@MainActivity.supportFragmentManager)
+        MICROPHONE_TEST -> {
+          MicTestDialogFragment().show(
+            fragmentManager,
+            MicTestDialogFragment::class.java.canonicalName
+          )
         }
         DESCRIPTION_LEGAL -> { // NoticesDialogFragment.show(this@MainActivity)
         }

@@ -4,16 +4,11 @@ import android.app.Application
 
 class AuReApp : Application() {
   companion object {
-    private lateinit var sAppContext: AuReApp;
-
-    private fun setContext(auReApp: AuReApp) {
-      sAppContext = auReApp
-    }
-
-    fun getContext() = sAppContext
+    lateinit var context: AuReApp
+      private set
   }
 
   init {
-    setContext(this)
+    context = this
   }
 }

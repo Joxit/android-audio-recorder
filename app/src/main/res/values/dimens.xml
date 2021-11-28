@@ -44,5 +44,14 @@
     <dimen name="dialog_title_padding">18.0dip</dimen>
     <dimen name="dialog_title_padding_side">24.0dip</dimen>
     <dimen name="dialog_title_text">20.0sp</dimen>
+    <dimen name="dialog_mic_test_description_padding">24.0dip</dimen>
+    <dimen name="dialog_mic_test_description_padding_bottom">8.0dip</dimen>
+    <dimen name="dialog_mic_test_meter_padding_left">64.0dip</dimen>
+    <dimen name="dialog_mic_test_meter_padding_top">7.0dip</dimen>
+    <dimen name="dialog_mic_test_meter_padding_right">64.0dip</dimen>
+    <dimen name="dialog_mic_test_icons_padding_top">7.0dip</dimen>
+    <dimen name="dialog_mic_test_meter_icon_padding_left">7.0dip</dimen>
+    <dimen name="dialog_mic_test_meter_icon_margin_top">8.0dip</dimen>
+    <dimen name="dialog_mic_test_meter_icon_margin_bottom">8.0dip</dimen>
 
 </resources>

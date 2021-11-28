@@ -42,9 +42,13 @@
     <string name="AURE_SETTINGS_TITLE_AUDIO_MODE">Mode</string>
     <string name="AURE_SETTINGS_TITLE_AUDIO_QUALITY">Quality</string>
 
+    <!-- Mic test -->
+    <string name="AURE_DIALOG_MESSAGE_MICROPHONE_TEST">To test if your microphone is working, talk close to the device and check if the input meter is lighting up.</string>
 
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="YES_BUTTON">Yes</string>
+
 </resources>
