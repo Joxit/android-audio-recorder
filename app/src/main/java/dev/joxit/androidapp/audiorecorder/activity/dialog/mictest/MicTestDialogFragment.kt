@@ -7,10 +7,12 @@ import android.view.View
 import androidx.fragment.app.DialogFragment
 import dev.joxit.androidapp.audiorecorder.R
 import dev.joxit.androidapp.audiorecorder.activity.dialog.DialogFactory
+import dev.joxit.androidapp.audiorecorder.activity.permission.PermissionHelper
 
 class MicTestDialogFragment : DialogFragment() {
 
   override fun onCreateDialog(bundle: Bundle?): Dialog {
+    PermissionHelper.INSTANCE.checkPermissionAndExecute(requireActivity())
     val view: View =
       requireActivity().layoutInflater.inflate(R.layout.dialog_fragment_mic_test, null)
     return AlertDialog.Builder(activity)

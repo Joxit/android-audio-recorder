@@ -45,6 +45,13 @@
     <!-- Mic test -->
     <string name="AURE_DIALOG_MESSAGE_MICROPHONE_TEST">To test if your microphone is working, talk close to the device and check if the input meter is lighting up.</string>
 
+    <!-- Permissions -->
+    <string name="AURE_PERMISSION_LIST_MICROPHONE_DESCRIPTION">To record audio</string>
+    <string name="AURE_PERMISSION_LIST_STORAGE_DESCRIPTION">Save media to your device</string>
+    <string name="AURE_PERMISSION_LIST_PHONE_DESCRIPTION">Pause recording during calls</string>
+    <string name="AURE_DIALOG_TITLE_ERROR_PERMISSION">Could not continue</string>
+    <string name="AURE_DIALOG_BODY_ASK_PERMISSION">{0} requires the following permission(s)</string>
+
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>

@@ -53,5 +53,9 @@
     <dimen name="dialog_mic_test_meter_icon_padding_left">7.0dip</dimen>
     <dimen name="dialog_mic_test_meter_icon_margin_top">8.0dip</dimen>
     <dimen name="dialog_mic_test_meter_icon_margin_bottom">8.0dip</dimen>
+    <dimen name="permission_dialog_padding">24.0dip</dimen>
+    <dimen name="permission_dialog_padding_top">20.0dip</dimen>
+    <dimen name="permission_dialog_list_padding_top">12.0dip</dimen>
+    <dimen name="permission_item_padding_top">12.0dip</dimen>
 
 </resources>
