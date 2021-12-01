@@ -42,6 +42,17 @@
                 android:src="@drawable/icon_mic"
                 app:tint="@color/black" />
 
+            <ImageView
+                android:id="@+id/volume_meter_mono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dialog_mic_test_meter_icon_margin_top"
+                android:layout_marginBottom="@dimen/dialog_mic_test_meter_icon_margin_bottom"
+                android:paddingStart="@dimen/dialog_mic_test_meter_icon_padding_left"
+                android:paddingLeft="@dimen/dialog_mic_test_meter_icon_padding_left"
+                android:src="@drawable/bg_mono"
+                android:visibility="gone" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -49,22 +60,24 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/volumeMeterImageStereo"
+                    android:id="@+id/volume_meter_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dialog_mic_test_meter_icon_margin_top"
                     android:paddingStart="@dimen/dialog_mic_test_meter_icon_padding_left"
                     android:paddingLeft="@dimen/dialog_mic_test_meter_icon_padding_left"
-                    android:src="@drawable/bg_stereo" />
+                    android:src="@drawable/bg_stereo"
+                    android:visibility="visible" />
 
                 <ImageView
-                    android:id="@+id/volumeMeterImageStereo2"
+                    android:id="@+id/volume_meter_right"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/dialog_mic_test_meter_icon_margin_bottom"
                     android:paddingStart="@dimen/dialog_mic_test_meter_icon_padding_left"
                     android:paddingLeft="@dimen/dialog_mic_test_meter_icon_padding_left"
-                    android:src="@drawable/bg_stereo" />
+                    android:src="@drawable/bg_stereo"
+                    android:visibility="visible" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
