@@ -56,15 +56,15 @@ class MicTestDialogFragment : DialogFragment() {
     when (mode) {
       AudioModeEntity.STEREO -> {
         viewModel.stereoLeft.observe(this) {
-
+          volumeMeterStereoLeft.setImageResource(it.stereo)
         }
         viewModel.stereoRight.observe(this) {
-
+          volumeMeterStereoRight.setImageResource(it.stereo)
         }
       }
       AudioModeEntity.MONO -> {
         viewModel.mono.observe(this) {
-
+          volumeMeterMono.setImageResource(it.mono)
         }
       }
     }

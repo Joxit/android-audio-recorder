@@ -5,11 +5,12 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import dev.joxit.androidapp.audiorecorder.entity.VolumeMeterEntity
 
 class MicTestDialogViewModel(application: Application) : AndroidViewModel(application) {
-  val stereoLeft: MutableLiveData<Int> = MutableLiveData(0)
-  val stereoRight: MutableLiveData<Int> = MutableLiveData(0)
-  val mono: MutableLiveData<Int> = MutableLiveData(0)
+  val stereoLeft: MutableLiveData<VolumeMeterEntity> = MutableLiveData(VolumeMeterEntity.METER_0)
+  val stereoRight: MutableLiveData<VolumeMeterEntity> = MutableLiveData(VolumeMeterEntity.METER_0)
+  val mono: MutableLiveData<VolumeMeterEntity> = MutableLiveData(VolumeMeterEntity.METER_0)
 
   class MicTestDialogViewModelFactory(private val application: Application) :
     ViewModelProvider.Factory {
