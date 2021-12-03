@@ -2,7 +2,10 @@ package dev.joxit.androidapp.audiorecorder.activity.dialog.mictest
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.DialogInterface.BUTTON_POSITIVE
+import android.media.MediaRecorder
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -48,7 +51,7 @@ class MicTestDialogFragment : DialogFragment() {
     val volumeMeterStereoRight: ImageView = dialog.findViewById(R.id.volume_meter_right)
     val stereoVisibility = if (mode == AudioModeEntity.STEREO) View.VISIBLE else View.GONE
     val monoVisibility = if (mode == AudioModeEntity.MONO) View.VISIBLE else View.GONE
-
+    val yes = (dialog as AlertDialog).getButton(BUTTON_POSITIVE)
     volumeMeterMono.visibility = monoVisibility
     volumeMeterStereoLeft.visibility = stereoVisibility
     volumeMeterStereoRight.visibility = stereoVisibility
@@ -68,6 +71,14 @@ class MicTestDialogFragment : DialogFragment() {
         }
       }
     }
+
+    dialog.setCanceledOnTouchOutside(false)
+    yes.isEnabled = false
+    Handler().postDelayed({
+      if (dialog.isShowing) {
+        yes.isEnabled = true
+      }
+    }, 2000)
   }
 
 }
