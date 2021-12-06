@@ -57,7 +57,7 @@ enum class AudioFormatEntity(
 
   fun getBitsPerSample(): Short = 16
 
-  fun getMaxFileSize(): Int = if (this == WAV) 2146435071 else -1
+  fun getMaxFileSize(): Long = if (this == WAV) 2146435071 else -1
 
   fun getBufferSize() = 0
 
