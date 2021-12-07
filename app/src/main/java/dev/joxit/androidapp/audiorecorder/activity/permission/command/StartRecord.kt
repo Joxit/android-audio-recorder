@@ -6,7 +6,7 @@ import dev.joxit.androidapp.audiorecorder.entity.AudioFormatEntity
 
 class StartRecord(
   private val channels: Short,
-  private val maxFileSize: Long,
+  private var maxFileSize: Long,
   private val audioFormat: AudioFormatEntity
 ) : PermissionCommand() {
   constructor(parcel: Parcel) : this(
@@ -16,7 +16,9 @@ class StartRecord(
   )
 
   override fun doInBackground() {
-    TODO("Not yet implemented")
+    if (maxFileSize <= 0) {
+      maxFileSize = audioFormat.getMaxFileSize()
+    }
   }
 
   override fun writeToParcel(dest: Parcel, flags: Int) {

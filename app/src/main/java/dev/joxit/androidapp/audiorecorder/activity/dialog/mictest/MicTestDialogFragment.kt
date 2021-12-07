@@ -3,12 +3,10 @@ package dev.joxit.androidapp.audiorecorder.activity.dialog.mictest
 import android.app.AlertDialog
 import android.app.Dialog
 import android.content.DialogInterface.BUTTON_POSITIVE
-import android.media.MediaRecorder
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.viewModels
 import dev.joxit.androidapp.audiorecorder.AuReApp
@@ -16,7 +14,10 @@ import dev.joxit.androidapp.audiorecorder.R
 import dev.joxit.androidapp.audiorecorder.activity.dialog.DialogFactory
 import dev.joxit.androidapp.audiorecorder.activity.dialog.ModeQualityAdapter
 import dev.joxit.androidapp.audiorecorder.activity.permission.PermissionHelper
+import dev.joxit.androidapp.audiorecorder.activity.permission.command.StartRecord
+import dev.joxit.androidapp.audiorecorder.entity.AudioFormatEntity
 import dev.joxit.androidapp.audiorecorder.entity.AudioModeEntity
+import dev.joxit.androidapp.audiorecorder.utils.getModePreference
 
 class MicTestDialogFragment : DialogFragment() {
   private val viewModel: MicTestDialogViewModel by viewModels {
@@ -24,7 +25,10 @@ class MicTestDialogFragment : DialogFragment() {
   }
 
   override fun onCreateDialog(bundle: Bundle?): Dialog {
-    PermissionHelper.INSTANCE.checkPermissionAndExecute(requireActivity())
+    PermissionHelper.INSTANCE.checkPermissionAndExecute(
+      requireActivity(),
+      StartRecord(requireActivity().getModePreference().toShort(), 0, AudioFormatEntity.WAV)
+    )
     val view: View =
       requireActivity().layoutInflater.inflate(R.layout.dialog_fragment_mic_test, null)
     return AlertDialog.Builder(activity)
@@ -41,9 +45,7 @@ class MicTestDialogFragment : DialogFragment() {
 
   override fun onStart() {
     super.onStart()
-    val modePreference = requireActivity()
-      .getPreferences(AppCompatActivity.MODE_PRIVATE)
-      .getInt(ModeQualityAdapter.Mode.PREFERENCE, 0)
+    val modePreference = requireActivity().getModePreference()
     val mode = ModeQualityAdapter.Mode.ITEMS[modePreference]
     val dialog = requireDialog()
     val volumeMeterMono: ImageView = dialog.findViewById(R.id.volume_meter_mono)

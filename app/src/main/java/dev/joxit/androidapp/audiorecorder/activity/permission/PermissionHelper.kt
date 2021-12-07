@@ -4,6 +4,7 @@ import android.content.pm.PackageManager.PERMISSION_GRANTED
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import dev.joxit.androidapp.audiorecorder.R
+import dev.joxit.androidapp.audiorecorder.activity.permission.command.PermissionCommand
 
 enum class PermissionHelper {
   INSTANCE;
@@ -18,12 +19,17 @@ enum class PermissionHelper {
       )
   }
 
-  fun checkPermissionAndExecute(fragmentActivity: FragmentActivity) {
+  fun checkPermissionAndExecute(
+    fragmentActivity: FragmentActivity,
+    vararg permissionCommands: PermissionCommand
+  ) {
     if (!checkPermissions(fragmentActivity)) {
       RequestPermissionDialog().show(
         fragmentActivity.supportFragmentManager,
         RequestPermissionDialog::class.java.canonicalName
       )
+    } else {
+      permissionCommands.forEach(PermissionCommand::start)
     }
   }
 
