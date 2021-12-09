@@ -9,7 +9,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 
 class AudioRecorderService : IntentService("AudioRecorderService") {
   private var broadcastManager: LocalBroadcastManager? = null
-  private var isDistroyed = true
+  private var isDestroyed = true
   private var controller: AudioRecorderController? = null
   private val binder: IBinder = AudioRecorderBinder()
 
@@ -25,13 +25,13 @@ class AudioRecorderService : IntentService("AudioRecorderService") {
   override fun onCreate() {
     super.onCreate()
     broadcastManager = LocalBroadcastManager.getInstance(applicationContext)
-    isDistroyed = false
+    isDestroyed = false
     sendBroadcast(SERVICE_CREATED_INTENT)
   }
 
   override fun onDestroy() {
     super.onDestroy()
-    isDistroyed = true
+    isDestroyed = true
     broadcastManager = null
   }
 
