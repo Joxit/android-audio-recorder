@@ -108,7 +108,6 @@ class RecorderManager : Parcelable {
     }
   }
 
-  /* JADX INFO: finally extract failed */
   @Throws(AudioRecorder.AudioRecorderException::class)
   fun onRecordingPaused() {
     mInitializationLock.lock()
