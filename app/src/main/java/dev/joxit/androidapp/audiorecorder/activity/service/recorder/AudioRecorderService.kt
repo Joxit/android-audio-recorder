@@ -38,11 +38,11 @@ class AudioRecorderService : IntentService("AudioRecorderService") {
   override fun onBind(intent: Intent?): IBinder = binder
 
   private fun getElapsedTime(): Int {
-    return this.controller?.getElapsedTime() ?: 0
+    return this.controller?.elapsedTime ?: 0
   }
 
   private fun getVolume(): DoubleArray? {
-    return this.controller?.getVolume()
+    return this.controller?.volume
   }
 
   inner class AudioRecorderBinder : Binder() {

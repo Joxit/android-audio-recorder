@@ -21,7 +21,7 @@ class AudioRecorder {
   private var mRecordingThread: Thread? = null
   private var mRecordingTime: Long = 0
   private var mState = State.IDLE
-  private val volume = doubleArrayOf(SPL_THRESHOLD, SPL_THRESHOLD)
+  val volume = doubleArrayOf(SPL_THRESHOLD, SPL_THRESHOLD)
 
   companion object {
     private const val DEFAULT_BUFFER_INCREASE_FACTOR = 3
@@ -45,7 +45,7 @@ class AudioRecorder {
     fun onAudioCaptureStart()
     fun onError()
     fun onInitRecord()
-    fun onPacketRecorded(sArr: ShortArray?)
+    fun onPacketRecorded(packets: ShortArray)
     fun onPauseRecord()
     fun onResumeRecord()
     fun onStartRecord()
@@ -396,7 +396,7 @@ class AudioRecorder {
     }
   }
 
-  class AudioRecorderException : Exception {
+  open class AudioRecorderException : Exception {
     constructor(msg: String) : super(msg)
     constructor(ex: Throwable?) : super(ex)
     constructor(msg: String?, ex: Throwable?) : super(msg, ex)

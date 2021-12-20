@@ -33,7 +33,7 @@ class VolumeControl(i: Int, context: Context, volumeCallback: VolumeCallback) :
     val isPlaying: Boolean
     fun pauseAudio()
     fun playAudio()
-    fun setVolume(f: Float)
+    fun setVolume(volume: Float)
   }
 
   fun onCreate() {
