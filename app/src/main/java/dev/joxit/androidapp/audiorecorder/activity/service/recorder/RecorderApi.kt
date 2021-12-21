@@ -12,6 +12,12 @@ class RecorderApi(private val context: Context) : ServiceConnection {
   private var mBinder: AudioRecorderService.AudioRecorderBinder? = null
   private val enabled = AtomicBoolean(false)
 
+  fun isEnabled() = enabled.get()
+
+  fun getElapsedTime(): Int = mBinder?.elapsedTime ?: 0
+
+  fun getVolume(): DoubleArray? = mBinder?.volume
+
   override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
     this.mBinder = service as AudioRecorderService.AudioRecorderBinder
     this.enabled.set(true)
