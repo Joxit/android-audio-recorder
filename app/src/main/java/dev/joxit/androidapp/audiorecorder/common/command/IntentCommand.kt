@@ -20,16 +20,16 @@ abstract class IntentCommand : Command(), Parcelable {
     }
   }
 
-  abstract fun createIntent(context: Context?): Intent
+  abstract fun createIntent(context: Context): Intent
   override fun describeContents(): Int = 0
 
-  fun start(context: Context?) {
+  fun start(context: Context) {
     val createIntent = createIntent(context)
     createIntent.putExtra(INTENT_EXTRA_COMMAND, this)
     ContextCompat.startForegroundService(context!!, createIntent)
   }
 
-  fun getIntent(context: Context?): Intent {
+  fun getIntent(context: Context): Intent {
     val createIntent = createIntent(context)
     createIntent.putExtra(INTENT_EXTRA_COMMAND, this)
     return createIntent
